@@ -1,862 +1,1444 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+
+<html class="dark" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    <title>Uthmancoder</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
-
-    <!-- Favicons -->
-    <link href="assets/img/my logo.jpg" rel="icon" />
-    <link href="assets/img/my logo.jpg" rel="apple-touch-icon" />
-
-    <!-- Vendor CSS Files -->
+    <title>Adebayo Uthman | Engineering Lead &amp; Product Architect</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
       rel="stylesheet"
     />
     <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
     <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#d0bcff",
+              "on-secondary-container": "#c4abff",
+              "surface-container": "#1e1f26",
+              error: "#ffb4ab",
+              outline: "#8c909f",
+              "on-secondary": "#3c0091",
+              "primary-fixed": "#d9e2ff",
+              "on-secondary-fixed-variant": "#5516be",
+              "on-primary-container": "#00275f",
+              "surface-container-highest": "#33343c",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#12131a",
+              "tertiary-container": "#00a74b",
+              "surface-container-lowest": "#0c0e14",
+              "on-primary-fixed": "#001a43",
+              "secondary-fixed": "#e9ddff",
+              primary: "#afc6ff",
+              "on-background": "#e2e1eb",
+              "secondary-container": "#571bc1",
+              secondary: "#d0bcff",
+              "inverse-on-surface": "#2f3037",
+              "on-tertiary": "#003915",
+              "on-primary-fixed-variant": "#004398",
+              "tertiary-fixed": "#6bff8f",
+              "on-surface": "#e2e1eb",
+              "on-primary": "#002d6c",
+              "on-surface-variant": "#c2c6d6",
+              "primary-fixed-dim": "#afc6ff",
+              tertiary: "#4ae176",
+              background: "#12131a",
+              "surface-container-low": "#1a1b22",
+              "surface-tint": "#afc6ff",
+              "on-tertiary-fixed-variant": "#005321",
+              "surface-container-high": "#282a31",
+              "tertiary-fixed-dim": "#4ae176",
+              "surface-bright": "#383940",
+              "primary-container": "#528dff",
+              "on-error": "#690005",
+              "on-secondary-fixed": "#23005c",
+              "outline-variant": "#424753",
+              "inverse-surface": "#e2e1eb",
+              "on-tertiary-fixed": "#002109",
+              "surface-variant": "#33343c",
+              "on-tertiary-container": "#003111",
+              "inverse-primary": "#0059c6",
+              "error-container": "#93000a",
+              surface: "#12131a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "element-gap": "32px",
+              "section-gap": "120px",
+              "margin-mobile": "20px",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "body-md": ["Inter"],
+              "display-lg": ["Inter"],
+              "display-lg-mobile": ["Inter"],
+              "mono-label": ["JetBrains Mono"],
+              "headline-md": ["Inter"],
+              "display-2xl": ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-md": [
+                "16px",
+                { lineHeight: "1.6", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "mono-label": [
+                "13px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-2xl": [
+                "72px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.04em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0em", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-
       body {
-        font-family: "Exo", sans-serif;
+        background-color: #050505;
+        color: #e2e1eb;
+        scroll-behavior: smooth;
       }
 
-      .context {
-        width: 100%;
-        position: absolute;
-        top: 50vh;
+      .glass-card {
+        background: rgba(17, 17, 17, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .context h1 {
-        text-align: center;
-        color: #fff;
-        font-size: 50px;
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
-      .area {
-        background: #4e54c8;
-        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-        width: 100%;
-        height: 100vh;
+      .scroll-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .circles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+      .grid-pattern {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
       }
 
-      .circles li {
-        position: absolute;
-        display: block;
-        list-style: none;
-        width: 20px;
-        height: 20px;
-        background: rgba(255, 255, 255, 0.2);
-        animation: animate 25s linear infinite;
-        bottom: -150px;
+      .magnetic-btn {
+        transition: transform 0.2s ease-out;
       }
 
-      .circles li:nth-child(1) {
-        left: 25%;
-        width: 80px;
-        height: 80px;
-        animation-delay: 0s;
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #4ae176;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 8px;
+        box-shadow: 0 0 8px #4ae176;
+        animation: pulse 2s infinite;
       }
 
-      .circles li:nth-child(2) {
-        left: 10%;
-        width: 20px;
-        height: 20px;
-        animation-delay: 2s;
-        animation-duration: 12s;
-      }
-
-      .circles li:nth-child(3) {
-        left: 70%;
-        width: 20px;
-        height: 20px;
-        animation-delay: 4s;
-      }
-
-      .circles li:nth-child(4) {
-        left: 40%;
-        width: 60px;
-        height: 60px;
-        animation-delay: 0s;
-        animation-duration: 18s;
-      }
-
-      .circles li:nth-child(5) {
-        left: 65%;
-        width: 20px;
-        height: 20px;
-        animation-delay: 0s;
-      }
-
-      .circles li:nth-child(6) {
-        left: 75%;
-        width: 110px;
-        height: 110px;
-        animation-delay: 3s;
-      }
-
-      .circles li:nth-child(7) {
-        left: 35%;
-        width: 150px;
-        height: 150px;
-        animation-delay: 7s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .circles li:nth-child(8) {
-        left: 50%;
-        width: 25px;
-        height: 25px;
-        animation-delay: 15s;
-        animation-duration: 45s;
-      }
-
-      .circles li:nth-child(9) {
-        left: 20%;
-        width: 15px;
-        height: 15px;
-        animation-delay: 2s;
-        animation-duration: 35s;
-      }
-
-      .circles li:nth-child(10) {
-        left: 85%;
-        width: 150px;
-        height: 150px;
-        animation-delay: 0s;
-        animation-duration: 11s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .about-img {
-        width: 100%;
-        height: 200px;
-        border-radius: 10px;
-        object-fit: cover;
-        background-position: center;
-        background-size: cover;
-        object-position: center;
-      }
-
-      @keyframes animate {
+      @keyframes pulse {
         0% {
-          transform: translateY(0) rotate(0deg);
-          opacity: 1;
-          border-radius: 0;
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(74, 225, 118, 0.7);
         }
-
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(74, 225, 118, 0);
+        }
         100% {
-          transform: translateY(-1000px) rotate(720deg);
-          opacity: 0;
-          border-radius: 50%;
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(74, 225, 118, 0);
         }
       }
 
-      @media screen and (max-width: 500px) {
-        .about-img {
-          width: 100%;
-          height: 500px;
-          border-radius: 10px;
-          object-fit: cover;
-          background-position: center;
-          background-size: cover;
-          object-position: center;
-        }
+      .timeline-line {
+        background: linear-gradient(to bottom, #afc6ff 0%, #afc6ff 100%);
+        background-size: 100% 0%;
+        background-repeat: no-repeat;
+        transition: background-size 1.5s ease-out;
+      }
+
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition:
+          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.35s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      }
+
+      .project-card-bg {
+        position: absolute;
+        inset: 0;
+        background-size: contain;
+        background-position: center top;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        z-index: 0;
+      }
+
+      .project-card:hover .project-card-bg {
+        transform: scale(1.06);
+      }
+
+      .project-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(17, 15, 15, 0.95) 10%,
+          rgba(20, 17, 17, 0.85) 40%,
+          rgba(5, 5, 5, 0.92) 100%
+        );
+        z-index: 1;
+        transition: background 0.35s ease;
+      }
+
+      .project-card:hover .project-card-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(5, 5, 5, 0.2) 0%,
+          rgba(5, 5, 5, 0.6) 40%,
+          rgba(5, 5, 5, 0.95) 100%
+        );
+      }
+
+      .project-card-content {
+        position: relative;
+        z-index: 2;
+        padding: 28px;
+      }
+
+      .project-card-arrow {
+        opacity: 0;
+        transform: translateX(-6px);
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .project-card:hover .project-card-arrow {
+        opacity: 1;
+        transform: translateX(0);
       }
     </style>
   </head>
-
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo"><a href="index.html">Danfodio</a></h1>
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li><a class="nav-link scrollto" href="#work">Work</a></li>
-
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <div
-      id="hero"
-      class="hero route bg-image"
-      style="background-image: url(assets/img/hero-bg.jpg)"
+  <body class="font-body-md selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar Shell -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl rounded-full mt-6 border border-white/10 shadow-[0_0_15px_rgba(79,140,255,0.1)]"
     >
-      <div class="overlay-itro">
-        <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li>Uthmancoder</li>
-          <li></li>
-          <li></li>
-          <li>Uthmancoder</li>
-        </ul>
-      </div>
-      <div class="hero-content display-table">
-        <div class="table-cell">
-          <div class="container">
-            <!--<p class="display-6 color-d">Hello, world!</p>-->
-            <h1 class="hero-title mb-4">Hi, am Uthmancoder</h1>
-            <p class="hero-subtitle">
-              <span
-                class="typed"
-                data-typed-items="Front End Developer, Backend developer, Freelancer"
-              ></span>
-            </p>
-            <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Hero Section -->
-
-    <main id="main">
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about-mf sect-pt4 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-sm-6 col-md-5">
-                        <div class="">
-                          <img
-                            class="about-img"
-                            src="./assets/img/myImage.jpg"
-                            class="img-fluid rounded w-full h-full"
-                            alt=""
-                            style="object-fit: cover"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-7">
-                        <div class="about-info text-dark md-text-secondary">
-                          <p>
-                            <span class="title-s">Name: </span>
-                            <span>Adebayo Uthman</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Profile: </span>
-                            <span>Front end developer</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Email: </span>
-                            <span>uthmanadebayo@gmail.com</span>
-                          </p>
-                          <p>
-                            <span class="title-s">Phone: </span>
-                            <span>+234 8132 577 114</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="skill-mf">
-                      <p class="title-s">Technical Expertise</p>
-                      <ul>
-                        <li>
-                          <strong>Frontend Development:</strong> Expertise in
-                          building responsive, high-performance UIs using
-                          React.js, Next.js, and TailwindCSS.
-                        </li>
-                        <li>
-                          <strong>Backend Development:</strong> Proficient in
-                          Node.js, Express.js, and RESTful API design.
-                        </li>
-                        <li>
-                          <strong>Full Stack Development:</strong> Experience in
-                          developing end-to-end solutions, integrating frontend
-                          and backend seamlessly.
-                        </li>
-                        <li>
-                          <strong>Version Control:</strong> Skilled in using Git
-                          for collaborative development.
-                        </li>
-                        <li>
-                          <strong>Database Management:</strong> Experienced with
-                          MongoDB and MySQL for database design and
-                          optimization.
-                        </li>
-                        <li>
-                          <strong>Cloud & DevOps:</strong> Familiar with
-                          deployment pipelines and cloud platforms like Heroku
-                          and AWS.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="about-me pt-4 pt-md-0">
-                      <div class="title-box-2">
-                        <h5 class="title-left">About Me</h5>
-                      </div>
-                      <p class="lead font-light text-dark md-text-secondary">
-                        I am Uthman, a skilled front-end developer with
-                        expertise in building responsive, user-friendly, and
-                        visually appealing web applications. I specialize in
-                        HTML, CSS, JavaScript, and frameworks like Bootstrap and
-                        TailwindCSS.
-                      </p>
-                      <p class="lead font-light text-dark md-text-secondary">
-                        My focus is on delivering efficient solutions that
-                        enhance user experience and align with client goals.
-                        With a commitment to staying updated on the latest
-                        technologies, I ensure that every project I work on is
-                        modern, optimized, and scalable.
-                      </p>
-                      <p class="lead font-light text-dark md-text-secondary">
-                        In addition to technical skills, I excel in
-                        collaboration and communication, enabling seamless
-                        teamwork and successful project delivery.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-
-      <!-- ======= Services Section ======= -->
-      <section id="services" class="services-mf pt-5 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="title-box text-center">
-                <h3 class="title-a">Services</h3>
-                <p class="subtitle-a"></p>
-                <div class="line-mf"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="service-box shadow">
-                <div class="service-ico">
-                  <span class="ico-circle"
-                    ><i class="bi bi-briefcase"></i
-                  ></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Web Design</h2>
-                  <p class="s-description text-center"></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="service-box shadow">
-                <div class="service-ico">
-                  <span class="ico-circle"
-                    ><i class="bi bi-card-checklist"></i
-                  ></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Web Development</h2>
-                  <p class="s-description text-center"></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="service-box shadow">
-                <div class="service-ico">
-                  <span class="ico-circle"
-                    ><i class="bi bi-binoculars"></i
-                  ></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Responsive Design</h2>
-                  <p class="s-description text-center"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Services Section -->
-
-      <!-- ======= Portfolio Section ======= -->
-      <section id="work" class="portfolio-mf sect-pt4 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="title-box text-center">
-                <h3 class="title-a">Portfolio</h3>
-                <p class="subtitle-a">Check out some of my completed project</p>
-                <div class="line-mf"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="work-box shadow">
-                <a
-                  href="assets/img/flurrypay.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img
-                      class="w-100 h-100"
-                      src="assets/img/flurrypay.png"
-                      alt=""
-                      class="img-fluid"
-                    />
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Crypto Exchange Website</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span>
-                        <span class="w-date">18 Dec. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://flurrypay.io">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box shadow">
-                <a
-                  href="assets/img/cedaai.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img src="assets/img/cedaai.png" alt="" class="img-fluid" />
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">AI-Powered Content Tools</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span> /
-                        <span class="w-date">10 Sep. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://cedaai-text.vercel.app">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box shadow">
-                <a
-                  href="assets/img/capital-luxury.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img
-                      src="assets/img/capital-luxury.png"
-                      alt=""
-                      class="img-fluid w-100 h-100"
-                    />
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Logistics Website</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span> /
-                        <span class="w-date">22 September. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://luxi-frontend.vercel.app/">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box shadow h-50 realestete real">
-                <a
-                  href="assets/img/humanizer.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img
-                      src="assets/img/humanizer.png"
-                      alt=""
-                      class="img-fluid"
-                    />
-                  </div>
-                </a>
-                <div class="work-content bg-light shadow">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">AI Content Transformation</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span> /
-                        <span class="w-date">22 march. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://www.humanizingaitext.com/">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box shadow">
-                <a
-                  href="assets/img/kik-perfume.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img
-                      src="assets/img/kik-perfume.png"
-                      alt=""
-                      class="img-fluid"
-                    />
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">E-Commerce Website</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span> /
-                        <span class="w-date">18 june. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://kikperfume.com">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box shadow">
-                <a
-                  href="assets/img/getbrand.png"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                >
-                  <div class="work-img">
-                    <img
-                      src="assets/img/getbrand.png"
-                      alt=""
-                      class="img-fluid"
-                    />
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <h2 class="w-title">Social Networking Website</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Web Design</span> /
-                        <span class="w-date">18 Dec. 2024</span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="w-like">
-                        <a href="https://getyourbrand.net/">
-                          <span class="bi bi-plus-circle"></span
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Portfolio Section -->
-
-      <!-- ======= Contact Section ======= -->
-
-      <section
-        id="contact"
-        class="paralax-mf footer-paralax bg-image sect-mt4 route"
-        style="background-image: url(assets/img/overlay-bg.jpg)"
+      <div
+        class="text-xl md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-on-surface"
       >
-        <div class="overlay-mf"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="contact-mf">
-                <div
-                  id="contact"
-                  class="box-shadow-full"
-                  style="background-color: #f4f4f4"
-                >
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="title-box-2">
-                        <h5 class="title-left">Send Message To Me</h5>
-                      </div>
-                      <div>
-                        <form id="form">
-                          <div class="row">
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input
-                                  type="text"
-                                  name="name"
-                                  class="form-control"
-                                  id="name"
-                                  placeholder="Your Name"
-                                  required
-                                />
-                              </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  name="email"
-                                  id="email"
-                                  placeholder="Your Email"
-                                  required
-                                />
-                              </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  name="subject"
-                                  id="subject"
-                                  placeholder="Subject"
-                                  required
-                                />
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <textarea
-                                  class="form-control"
-                                  name="message"
-                                  id="message"
-                                  rows="5"
-                                  placeholder="Message"
-                                  required
-                                ></textarea>
-                              </div>
-                            </div>
-                            <!-- <div class="col-md-12 text-center my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                          </div> -->
-                            <div class="col-md-12 text-center">
-                              <button
-                                id="button"
-                                type="submit"
-                                class="button button-a button-big button-rouded mt-4"
-                              >
-                                Send Message
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="title-box-2 pt-4 pt-md-0">
-                        <h5 class="title-left">Get in Touch</h5>
-                      </div>
-                      <div class="more-info">
-                        <p class="lead">To get in touch with me</p>
-                        <ul class="list-ico">
-                          <li>
-                            <span class="bi bi-phone"></span>+234 8132 577 114
-                          </li>
-                          <li>
-                            <span class="bi bi-phone"></span>+234 7016 985 308
-                          </li>
-                          <li>
-                            <span class="bi bi-envelope"></span>
-                            utthmanadebayo@gmail.com
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="socials">
-                        <ul>
-                          <li>
-                            <a href="mailto:utthmanadebayo@gmail.com"
-                              ><span class="ico-circle pt-1"
-                                ><i class="bi bi-envelope"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://www.linkedin.com/in/adebayo-uthman-024494259/"
-                              ><span class="ico-circle pt-1"
-                                ><i class="bi bi-linkedin"></i></span
-                            ></a>
-                          </li>
-                          <li>
-                            <a href="https://github.com/Uthmancoder"
-                              ><span class="ico-circle pt-1"
-                                ><i class="bi bi-github"></i></span
-                            ></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Contact Section -->
-    </main>
-    <!-- End #main -->
+        Adebayo Uthman
+      </div>
+      <div class="hidden md:flex gap-8 items-center">
+        <a
+          class="text-primary font-bold border-b border-primary hover:text-primary transition-colors duration-300"
+          href="#"
+          >Journey</a
+        >
+        <a
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#products"
+          >Products</a
+        >
+        <a
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#skills"
+          >Skills</a
+        >
+        <a
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#philosophy"
+          >Philosophy</a
+        >
+        <a
+          class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300"
+          href="#"
+          >Blog</a
+        >
+      </div>
+      <a
+        href="assets/img/Adebayo Uthman Cooperate Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-[0_0_15px_rgba(79,140,255,0.4)]"
+      >
+        Resume
+      </a>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      class="relative h-full md:h-screen w-full flex pt-[18vh] pb-16 md:pb-0 md:pt-0 items-center justify-center md:overflow-hidden"
+    >
+      <!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full opacity-60" -->
+      <div
+        class="absolute inset-0 w-full h-full opacity-60"
+        style="display: block"
+      >
+        <canvas
+          id="shader-canvas-ANIMATION_2"
+          style="display: block; width: 100%; height: 100%"
+        ></canvas>
+        <script>
+          (function () {
+            const canvas = document.getElementById("shader-canvas-ANIMATION_2");
 
-    <div id="preloader"></div>
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+            // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+            // This fires on initial layout and whenever the element is resized.
+            function syncSize() {
+              const w = canvas.clientWidth || 1280;
+              const h = canvas.clientHeight || 720;
+              if (canvas.width !== w || canvas.height !== h) {
+                canvas.width = w;
+                canvas.height = h;
+              }
+            }
+            if (typeof ResizeObserver !== "undefined") {
+              new ResizeObserver(syncSize).observe(canvas);
+            }
+            syncSize();
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/typed.js/typed.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+            const gl =
+              canvas.getContext("webgl") ||
+              canvas.getContext("experimental-webgl");
+            if (!gl) return;
+            const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+            const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      emailjs.init("W_Avw1MSd9KUMqoAl");
-    </script>
-    <script>
-      document
-        .getElementById("form")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
+varying vec2 v_texCoord;
 
-          const btn = document.getElementById("button");
-          btn.innerText = "Sending...";
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create organic movement using time-shifted sine waves
+    float t = u_time * 0.4;
+    
+    // Color stops inspired by the design system
+    vec3 color1 = vec3(0.02, 0.02, 0.02); // Deep Black #050505
+    vec3 color2 = vec3(0.31, 0.55, 1.0);  // Primary Accent #4F8CFF
+    vec3 color3 = vec3(0.55, 0.36, 0.96); // Secondary Accent #8B5CF6
+    
+    // Wave patterns
+    float noise1 = sin(uv.x * 3.0 + t) * cos(uv.y * 2.0 - t * 0.5);
+    float noise2 = cos(uv.y * 3.5 + t * 0.8) * sin(uv.x * 2.5 + t * 0.3);
+    float noise3 = sin(length(uv - 0.5) * 4.0 - t);
+    
+    // Blend colors based on noise
+    vec3 finalColor = mix(color1, color2, clamp(noise1 * 0.5 + 0.5, 0.0, 1.0) * 0.4);
+    finalColor = mix(finalColor, color3, clamp(noise2 * 0.5 + 0.5, 0.0, 1.0) * 0.3);
+    finalColor = mix(finalColor, color2, clamp(noise3 * 0.5 + 0.5, 0.0, 1.0) * 0.2);
+    
+    // Add subtle grain/texture
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += grain * 0.02;
 
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const subject = document.getElementById("subject").value;
-          const message = document.getElementById("message").value;
+    // Darken towards bottom for readability
+    finalColor *= smoothstep(0.0, 1.2, 1.5 - uv.y);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+            function cs(type, src) {
+              const s = gl.createShader(type);
+              gl.shaderSource(s, src);
+              gl.compileShader(s);
+              return s;
+            }
+            const prog = gl.createProgram();
+            gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+            gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+            gl.linkProgram(prog);
+            gl.useProgram(prog);
+            const buf = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+            gl.bufferData(
+              gl.ARRAY_BUFFER,
+              new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+              gl.STATIC_DRAW,
+            );
+            const pos = gl.getAttribLocation(prog, "a_position");
+            gl.enableVertexAttribArray(pos);
+            gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+            const uTime = gl.getUniformLocation(prog, "u_time");
+            const uRes = gl.getUniformLocation(prog, "u_resolution");
+            const uMouse = gl.getUniformLocation(prog, "u_mouse");
 
-          const serviceID = "service_f12w1dc";
-          const templateID = "template_qumpzke";
-
-          try {
-            await emailjs.send(serviceID, templateID, {
-              from_name: name,
-              to_name: "utthmanadebayo@gmail.com",
-              reply_to: email,
-              message: message,
+            // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+            // Shaders that need normalized coords should use: u_mouse / u_resolution.
+            let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+            window.addEventListener("mousemove", (event) => {
+              const rect = canvas.getBoundingClientRect();
+              if (rect.width && rect.height) {
+                const nx = (event.clientX - rect.left) / rect.width;
+                const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+                mouse.x = nx * canvas.width;
+                mouse.y = ny * canvas.height;
+              }
             });
 
-            btn.innerText = "Send Email";
-            alert(
-              "Your mesage have been delivered successfully, thanks for contacting me❤️"
-            );
-            name.value = "";
-            email.value = "";
-            subject.value = "";
-            message.value = "";
-          } catch (error) {
-            btn.innerText = "Send Email";
-            console.error(error);
-            alert("Failed to send email. Please try again.");
+            function render(t) {
+              if (typeof ResizeObserver === "undefined") syncSize();
+              gl.viewport(0, 0, canvas.width, canvas.height);
+              if (uTime) gl.uniform1f(uTime, t * 0.001);
+              if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+              if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+              gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+              requestAnimationFrame(render);
+            }
+            render(0);
+          })();
+        </script>
+      </div>
+      <!-- STITCH_SHADER_END:ANIMATION_2 -->
+      <div class="absolute inset-0 grid-pattern pointer-events-none"></div>
+      <div
+        class="relative z-10 text-center px-margin-mobile md:px-gutter max-w-4xl"
+      >
+        <div
+          class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+        >
+          <span class="pulse-dot"></span>
+          <span
+            class="font-mono-label text-mono-label uppercase tracking-widest text-tertiary"
+            >Open for Strategic Collaboration</span
+          >
+        </div>
+        <h1
+          class="font-display-2xl text-display-lg-mobile md:text-display-2xl mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
+        >
+          Hi, I'm Adebayo Uthman.
+        </h1>
+        <p class="font-headline-md text-headline-md text-primary mb-6">
+          Engineering Lead • Full Stack Web &amp; Mobile Engineer • Product
+          Architect
+        </p>
+        <p
+          class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10"
+        >
+          I design, architect, and build scalable digital products that power
+          businesses across fintech, crypto, education, logistics, enterprise
+          software, and e-commerce.
+        </p>
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-6"
+        >
+          <a
+            class="magnetic-btn bg-primary text-on-primary px-10 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(79,140,255,0.3)] hover:scale-105 transition-all"
+            href="#products"
+          >
+            View My Work
+          </a>
+          <a
+            class="magnetic-btn border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/5 transition-all"
+            href="#contact"
+          >
+            Let's Build Something Great
+          </a>
+        </div>
+      </div>
+      <!-- Floating Decorative Elements -->
+      <div
+        class="absolute bottom-20 left-10 md:left-20 glass-card p-4 rounded-xl rotate-[-6deg] hidden lg:block animate-bounce shadow-xl"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-[18px]">code</span>
+          </div>
+          <span class="font-mono-label text-mono-label"
+            >Next.js + NestJS Expert</span
+          >
+        </div>
+      </div>
+      <div
+        class="absolute top-40 right-10 md:right-20 glass-card p-4 rounded-xl rotate-[4deg] hidden lg:block animate-pulse shadow-xl"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-[18px]">payments</span>
+          </div>
+          <span class="font-mono-label text-mono-label">Fintech Architect</span>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-20 border-y border-white/5 bg-surface-container-lowest">
+      <div
+        class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-2 md:grid-cols-4 gap-12"
+      >
+        <div class="text-center scroll-reveal">
+          <div class="font-display-lg text-primary">4+</div>
+          <div
+            class="font-mono-label text-on-surface-variant uppercase tracking-widest mt-2"
+          >
+            Years Experience
+          </div>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="font-display-lg text-primary">20+</div>
+          <div
+            class="font-mono-label text-on-surface-variant uppercase tracking-widest mt-2"
+          >
+            Projects Delivered
+          </div>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="font-display-lg text-primary">10+</div>
+          <div
+            class="font-mono-label text-on-surface-variant uppercase tracking-widest mt-2"
+          >
+            Production Systems
+          </div>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="font-display-lg text-primary">7+</div>
+          <div
+            class="font-mono-label text-on-surface-variant uppercase tracking-widest mt-2"
+          >
+            Industries Served
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About & Journey -->
+    <section class="py-section-gap relative overflow-hidden" id="journey">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="grid md:grid-cols-2 gap-20 items-start">
+          <div class="scroll-reveal">
+            <h2 class="font-headline-md text-headline-md mb-8">
+              Architecting Excellence Through a Dedicated Journey
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+              My approach to engineering isn't just about writing code; it's
+              about building products that solve real-world complexities. With a
+              foundation in both deep technical stacks and product strategy, I
+              bridge the gap between business vision and robust engineering.
+            </p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              I specialize in creating resilient payment infrastructures and
+              enterprise solutions that scale effortlessly.
+            </p>
+            <div
+              class="mt-12 p-8 rounded-2xl glass-card relative overflow-hidden group"
+            >
+              <div
+                class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              ></div>
+              <span class="material-symbols-outlined text-primary text-4xl mb-4"
+                >terminal</span
+              >
+              <h3 class="font-headline-md text-headline-md mb-2">
+                Technical Leadership
+              </h3>
+              <p class="text-on-surface-variant">
+                Empowering teams to ship high-quality software through
+                mentorship, standardized workflows, and architectural rigor.
+              </p>
+            </div>
+          </div>
+          <div class="relative pl-12 scroll-reveal">
+            <!-- Vertical Timeline -->
+            <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-white/10">
+              <div
+                class="timeline-line absolute left-0 top-0 w-full h-full"
+                id="experience-progress"
+              ></div>
+            </div>
+            <div class="space-y-16">
+              <!-- Role 1 -->
+              <div class="relative group">
+                <div
+                  class="absolute -left-[54px] top-0 w-6 h-6 rounded-full bg-background border-2 border-primary flex items-center justify-center"
+                >
+                  <div
+                    class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"
+                  ></div>
+                </div>
+                <div>
+                  <span class="font-mono-label text-primary uppercase"
+                    >Currently</span
+                  >
+                  <h3 class="font-headline-md text-headline-md mt-1">
+                    Lead Full Stack Engineer
+                  </h3>
+                  <p class="text-on-surface font-semibold mb-2">
+                    FlurryNetwork
+                  </p>
+                  <p class="text-on-surface-variant">
+                    Spearheading the engineering department for enterprise
+                    payment systems and crypto-native infrastructures.
+                  </p>
+                </div>
+              </div>
+              <!-- Role 2 -->
+              <div class="relative group">
+                <div
+                  class="absolute -left-[54px] top-0 w-6 h-6 rounded-full bg-background border-2 border-white/20 flex items-center justify-center"
+                >
+                  <div
+                    class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <span
+                    class="font-mono-label text-on-surface-variant uppercase"
+                    >2023 — 2025</span
+                  >
+                  <h3 class="font-headline-md text-headline-md mt-1">
+                    Frontend Engineer
+                  </h3>
+                  <p class="text-on-surface font-semibold mb-2">Zeno NG</p>
+                  <p class="text-on-surface-variant">
+                    Developed high-performance user interfaces for e-commerce
+                    and logistics platforms using React and modern CSS
+                    architectures.
+                  </p>
+                </div>
+              </div>
+              <!-- Role 3 -->
+              <div class="relative group">
+                <div
+                  class="absolute -left-[54px] top-0 w-6 h-6 rounded-full bg-background border-2 border-white/20 flex items-center justify-center"
+                >
+                  <div
+                    class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-primary transition-colors"
+                  ></div>
+                </div>
+                <div>
+                  <span
+                    class="font-mono-label text-on-surface-variant uppercase"
+                    >2022 — 2023</span
+                  >
+                  <h3 class="font-headline-md text-headline-md mt-1">
+                    Mentor &amp; Developer
+                  </h3>
+                  <p class="text-on-surface font-semibold mb-2">
+                    SQI College of ICT
+                  </p>
+                  <p class="text-on-surface-variant">
+                    Guided aspiring developers through modern web curricula
+                    while building internal institutional software.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Showcase -->
+    <section class="py-section-gap bg-surface-container-low" id="products">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="mb-20 scroll-reveal">
+          <span class="font-mono-label text-primary uppercase tracking-[0.2em]"
+            >Portfolio Showcase</span
+          >
+          <h2
+            class="font-display-lg text-display-lg-mobile md:text-display-lg mt-4 max-w-2xl"
+          >
+            Building Digital Products That Solve Real Problems
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project Card 1 — FlurryPay (crypto wallet app) -->
+          <a
+            href="https://flurrypay.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/flurrypay.jpg&quot;);
+                background-color: #0c0e1a;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 font-mono-label text-primary text-[11px] uppercase tracking-widest"
+                  >Fintech · App</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                FlurryPay
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                Nigeria's #1 crypto wallet — buy, sell &amp; swap 100+ coins,
+                pay bills, and top-up airtime in seconds.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >React Native</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >NestJS</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >AWS</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 2 — FlurryPay Business -->
+          <a
+            href="https://business.flurrypay.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/flurrypay-business.jpg&quot;);
+                background-color: #0d0f22;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-secondary/20 border border-secondary/30 font-mono-label text-secondary text-[11px] uppercase tracking-widest"
+                  >Business · Web</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                FlurryPay Business
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                Automates Bybit P2P crypto trading — handles payments, chats,
+                and releases so you can focus on strategy.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >TypeScript</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Redux</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Node.js</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Redis</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 3 — Univa (student companion app) -->
+          <a
+            href="https://apps.apple.com/us/app/univa/id6760207865"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/univa.jpg&quot;);
+                background-color: #1a0d2e;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-tertiary/20 border border-tertiary/30 font-mono-label text-tertiary text-[11px] uppercase tracking-widest"
+                  >Education · App</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                Univa
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                All-in-one university companion — smart notes, timetable,
+                assignment tracker, and a study marketplace.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >React Native</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Firebase</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Expo</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 4 — UnivaPay -->
+          <a
+            href="https://univa-pay-frontend.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/univapay.jpg&quot;);
+                background-color: #12101e;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 font-mono-label text-primary text-[11px] uppercase tracking-widest"
+                  >Fintech · Web</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                UnivaPay
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                Campus payments made seamless — pay SUG, college &amp;
+                departmental dues and grab event tickets in one tap.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Next.js</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >NestJS</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Paystack</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 5 — Artisan Connect -->
+          <a
+            href="https://apps.apple.com/us/app/artisan-connect/id6736657649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/artisan-connect.jpg&quot;);
+                background-color: #141010;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-white/10 border border-white/20 font-mono-label text-white/80 text-[11px] uppercase tracking-widest"
+                  >Marketplace · App</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                Artisan Connect
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                Quickly locate and hire skilled professionals nearby — view
+                profiles, schedule jobs, and pay safely in-app.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >React Native</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Node.js</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >MongoDB</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 6 — HumanizingAI Text -->
+          <a
+            href="https://humanizingaitext.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card scroll-reveal block"
+          >
+            <div
+              class="project-card-bg"
+              style="
+                background-image: url(&quot;assets/img/screenshots/humanizingai.jpg&quot;);
+                background-color: #0f1a10;
+              "
+            ></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="flex items-center justify-between mb-3">
+                <span
+                  class="px-3 py-1 rounded-full bg-tertiary/20 border border-tertiary/30 font-mono-label text-tertiary text-[11px] uppercase tracking-widest"
+                  >AI · Web</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/60 project-card-arrow"
+                  >north_east</span
+                >
+              </div>
+              <h3 class="font-headline-md text-[22px] text-white mb-2">
+                HumanizingAI Text
+              </h3>
+              <p
+                class="text-white/65 text-sm leading-relaxed mb-4 line-clamp-2"
+              >
+                Turns robotic AI drafts into authentic human writing — rated
+                4.8/5, with Standard, Fluent, and Undetectable modes.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Next.js</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >Node.js</span
+                >
+                <span
+                  class="px-2 py-1 rounded bg-white/10 font-mono-label text-[11px] text-white/70"
+                  >OpenAI API</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Skills -->
+    <section class="py-section-gap" id="skills">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div class="text-center mb-20 scroll-reveal">
+          <h2
+            class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6"
+          >
+            Technical Arsenal
+          </h2>
+          <p class="text-on-surface-variant max-w-2xl mx-auto">
+            A multi-disciplinary toolkit engineered for performance and
+            scalability across the modern software stack.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Skill Group 1 -->
+          <div class="scroll-reveal">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary">layers</span>
+              <h3 class="font-headline-md text-headline-md">Frontend</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >React</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Next.js</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >TypeScript</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Redux Toolkit</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Framer Motion</span
+              >
+            </div>
+          </div>
+          <!-- Skill Group 2 -->
+          <div class="scroll-reveal" style="transition-delay: 100ms">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary"
+                >database</span
+              >
+              <h3 class="font-headline-md text-headline-md">Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Node.js</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >NestJS</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >PostgreSQL</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >MongoDB</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Redis</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >GraphQL</span
+              >
+            </div>
+          </div>
+          <!-- Skill Group 3 -->
+          <div class="scroll-reveal" style="transition-delay: 200ms">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary">cloud</span>
+              <h3 class="font-headline-md text-headline-md">
+                Cloud &amp; DevOps
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >AWS</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Docker</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >CI/CD</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Vercel</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Kubernetes</span
+              >
+            </div>
+          </div>
+          <!-- Skill Group 4 -->
+          <div class="scroll-reveal" style="transition-delay: 300ms">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary">schema</span>
+              <h3 class="font-headline-md text-headline-md">Architecture</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Microservices</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >System Design</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >TDD</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Security</span
+              >
+            </div>
+          </div>
+          <!-- Skill Group 5 -->
+          <div class="scroll-reveal" style="transition-delay: 400ms">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary">groups</span>
+              <h3 class="font-headline-md text-headline-md">Leadership</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Agile</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Mentorship</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Project Planning</span
+              >
+              <span
+                class="px-4 py-2 rounded-lg bg-surface-container-high border border-white/10 font-mono-label"
+                >Code Review</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Engineering Philosophy -->
+    <section
+      class="py-section-gap relative bg-surface-container-lowest overflow-hidden"
+      id="philosophy"
+    >
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div
+        class="max-w-4xl mx-auto px-margin-mobile md:px-gutter relative z-10 text-center"
+      >
+        <span
+          class="material-symbols-outlined text-primary text-6xl mb-8 opacity-40"
+          >format_quote</span
+        >
+        <blockquote
+          class="font-display-lg text-display-lg-mobile md:text-headline-md italic text-on-surface leading-tight mb-10 scroll-reveal"
+        >
+          "I believe software should solve meaningful problems. My philosophy is
+          rooted in building systems that aren't just functionally correct, but
+          architecturally elegant, developer-friendly, and fundamentally
+          secure."
+        </blockquote>
+        <div class="flex items-center justify-center gap-4 scroll-reveal">
+          <div
+            class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A professional, high-contrast portrait of a black male software engineer with a confident expression. The lighting is cinematic with deep shadows and soft rim lights, suggesting a high-end tech environment. The background is a blurred dark office with subtle glowing monitor lights. The overall aesthetic is minimalist, elite, and technically sophisticated."
+              src="https://media.licdn.com/dms/image/v2/D4D03AQH7jaCQYVP_5A/profile-displayphoto-shrink_200_200/B4DZTvRcufG8AY-/0/1739181119663?e=2147483647&v=beta&t=6-Po_5vA34u_9WqL0sbadRmK19DPKHeXx3Sh8aMCrUQ"
+            />
+          </div>
+          <div class="text-left">
+            <div class="font-bold text-on-surface">Adebayo Uthman</div>
+            <div class="font-mono-label text-primary">Engineering Lead</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-section-gap" id="contact">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div
+          class="glass-card rounded-[40px] p-10 md:p-20 relative overflow-hidden"
+        >
+          <div
+            class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 blur-[100px] rounded-full"
+          ></div>
+          <div
+            class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 blur-[100px] rounded-full"
+          ></div>
+          <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2
+                class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8"
+              >
+                Let's build the next big thing.
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant mb-12"
+              >
+                Available for high-impact roles, architectural consulting, and
+                strategic product development. Let's discuss your vision.
+              </p>
+              <div class="space-y-6">
+                <a
+                  class="flex items-center gap-4 text-on-surface hover:text-primary transition-colors group"
+                  href="mailto:utthmanadebayo@gmail.com"
+                >
+                  <span
+                    class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-all"
+                  >
+                    <span class="material-symbols-outlined">mail</span>
+                  </span>
+                  <span class="font-headline-md text-[20px]"
+                    >utthmanadebayo@gmail.com</span
+                  >
+                </a>
+                <div class="flex gap-4">
+                  <a
+                    class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"
+                    href="https://www.linkedin.com/in/adebayo-uthman-024494259/"
+                  >
+                    <span class="material-symbols-outlined">link</span>
+                  </a>
+                  <a
+                    class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"
+                    href="https://github.com/Uthmancoder/"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >terminal</span
+                    >
+                  </a>
+                  <a
+                    class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all"
+                    href="https://twitter.com/utthmanadebayo"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >forum</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+            <form class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    class="font-mono-label text-on-surface-variant uppercase"
+                    >Name</label
+                  >
+                  <input
+                    class="w-full bg-[#0F0F0F] border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="font-mono-label text-on-surface-variant uppercase"
+                    >Email</label
+                  >
+                  <input
+                    class="w-full bg-[#0F0F0F] border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    placeholder="john@example.com"
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="font-mono-label text-on-surface-variant uppercase"
+                  >Message</label
+                >
+                <textarea
+                  class="w-full bg-[#0F0F0F] border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  placeholder="Tell me about your project..."
+                  rows="4"
+                ></textarea>
+              </div>
+              <button
+                class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-[0_0_20px_rgba(79,140,255,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="w-full py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center border-t border-white/5 bg-surface-container-lowest"
+    >
+      <div class="mb-8 md:mb-0">
+        <div class="font-headline-md text-headline-md text-on-surface mb-2">
+          Adebayo Uthman
+        </div>
+        <div class="font-body-md text-body-md text-on-surface-variant">
+          © 2024 Adebayo Uthman. Engineered for excellence.
+        </div>
+      </div>
+      <div class="flex gap-10">
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="https://github.com/Uthmancoder/"
+          >GitHub</a
+        >
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="https://www.linkedin.com/in/adebayo-uthman-024494259/"
+          >LinkedIn</a
+        >
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="https://medium.com/@utthmanadebayo"
+          >Medium</a
+        >
+        <a
+          class="text-on-surface-variant font-mono-label text-mono-label hover:text-primary hover:translate-y-[-2px] transition-all"
+          href="mailto:utthmanadebayo@gmail.com"
+          >Email</a
+        >
+      </div>
+    </footer>
+    <script>
+      // Scroll Reveal logic
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
           }
         });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".scroll-reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Experience timeline animation
+      const timelineObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              document.getElementById(
+                "experience-progress",
+              ).style.backgroundSize = "100% 100%";
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      timelineObserver.observe(document.querySelector("#journey"));
+
+      // Magnetic Button Effect
+      document.querySelectorAll(".magnetic-btn").forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "translate(0, 0) scale(1)";
+        });
+      });
     </script>
   </body>
 </html>
